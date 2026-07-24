@@ -1,0 +1,9 @@
+{
+  "name": "health-check-v1-complete",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Replacement bundle for the health-check app",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.56.0"
+  }
+}

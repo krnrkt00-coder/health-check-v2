@@ -66,6 +66,26 @@ async function writeState(state: AppState) {
   });
 }
 
+function statusTone(status: WorkStatus) {
+  switch (status) {
+    case "出勤":
+      return "bg-sky-100 text-sky-700 ring-sky-200";
+    case "休暇":
+    case "有休":
+      return "bg-emerald-100 text-emerald-700 ring-emerald-200";
+    case "半休":
+      return "bg-amber-100 text-amber-700 ring-amber-200";
+    case "代休":
+      return "bg-violet-100 text-violet-700 ring-violet-200";
+    case "欠勤":
+      return "bg-rose-100 text-rose-700 ring-rose-200";
+    case "在宅":
+      return "bg-slate-100 text-slate-700 ring-slate-200";
+    default:
+      return "bg-slate-100 text-slate-700 ring-slate-200";
+  }
+}
+
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
   const [state, setState] = useState<AppState>(EMPTY);
