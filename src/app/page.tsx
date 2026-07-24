@@ -300,7 +300,7 @@ export default function Home() {
                       <strong>{r.person}</strong>
                       <small>{r.date} ・ {r.temperature ? `${r.temperature}℃` : "-"}</small>
                     </div>
-                    <span className="status" style={{ background: statusBg(r.status), color: statusFg(r.status) }}>{r.status}</span>
+                    <span className={`rounded-full px-3 py-1 text-xs font-semibold ring-1 ${statusTone(r.status)}`}>{r.status}</span>
                   </div>
                   <div className="row">
                     {r.symptoms.length ? r.symptoms.map((s) => <span key={s} className="symptom">{s}</span>) : <span className="muted">症状なし</span>}
